@@ -1,6 +1,7 @@
 const fs = require("fs");
 const util = require("util");
-const inq = require("inquirer")
+const inq = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 
 // array of questions for user
@@ -67,10 +68,22 @@ const questions = [ {
 
 // function to write README file
 function writeToFile(fileName, data) {
+    fs.writeFile(fileName, generateMarkdown(data), (error) => error)
 }
 
 // function to initialize program
-function init() {
+async function init() {
+    try {
+        let userInput = await inq.prompt(questions);
+        
+        console.log(`Creating ${userInput.title}-README.md...`);
+        
+        writeToFile(`${userInput.title}-README.md`, userInput);
+
+        console.log("Readme successfully created")
+    } catch (error) {
+        throw error;
+    }   
 
 }
 
