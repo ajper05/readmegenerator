@@ -56,7 +56,7 @@
 
   [My Github](https://github.com/ajper05)
 
-  ![Screenshot](./screenshot.jpg)
+  ![Screenshot](/screenshot.jpg)
 
   ![Inquirer Version](https://img.shields.io/node/v/inquirer/latest)
 
