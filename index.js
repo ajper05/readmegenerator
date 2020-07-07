@@ -1,5 +1,4 @@
 const fs = require("fs");
-const util = require("util");
 const inq = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 
@@ -75,7 +74,7 @@ function writeToFile(fileName, data) {
 async function init() {
     try {
         let userInput = await inq.prompt(questions);
-        
+
         console.log(`Creating ${userInput.title}-README.md...`);
         
         writeToFile(`${userInput.title}-README.md`, userInput);
