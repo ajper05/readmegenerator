@@ -46,7 +46,7 @@ function generateMarkdown(data) {
 
   ![Screenshot](${data.screen})
 
-  [![Inquirer Version]https://img.shields.io/node/v/inquirer/latest]
+  ![Inquirer Version](https://img.shields.io/node/v/inquirer/latest)
 
 `
 return readmeTemplate;
